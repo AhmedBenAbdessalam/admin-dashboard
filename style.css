@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.grid-container {
+  background-color: aqua;
+  display: grid;
+  grid-template-columns: 200px 1fr 200px;
+  grid-template-rows: 200px 1fr;
+  height: max(600px, 100vh);
+}
+.header {
+  grid-area: 1/2/2/-1;
+  background-color: aliceblue;
+}
+.side-bar {
+  grid-area: 1/1/-1/2;
+  background-color: #2192d4;
+}
+.main {
+  grid-area: 2/2;
+  background-color: beige;
+}
+.side-content {
+  grid-area: 2/3;
+  background-color: bisque;
+}
