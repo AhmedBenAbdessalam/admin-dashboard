@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+*:root {
+  --blue-color: #2192d4;
+}
 body {
   margin: 0;
   padding: 0;
@@ -7,20 +10,103 @@ body {
 }
 
 .grid-container {
-  background-color: aqua;
+  background-color: #e2e8f0;
   display: grid;
-  grid-template-columns: 300px 1fr 200px;
-  grid-template-rows: 200px 1fr;
-  height: max(400px, 100vh);
+  grid-template-columns: 250px 3fr 1fr;
+  grid-template-rows: 135px 1fr;
+  height: 100vh;
 }
 .header {
   grid-area: 1/2/2/-1;
-  background-color: aliceblue;
+  background-color: white;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 30% calc(70% - 2rem);
+  padding: 0.7rem 2rem 0.2rem 2rem;
+  align-items: center;
+  row-gap: 1.5rem;
+  box-shadow: 0px 0px 6px 1px #0000002e;
+}
+
+.flex-container {
+  display: flex;
+  height: 100%;
+  gap: 1rem;
+  align-items: center;
+}
+.flex-container * {
+  height: inherit;
+}
+#search-container {
+  height: 80%;
+}
+.flex-container > svg {
+  height: 60%;
+}
+#search-bar {
+  width: 90%;
+  border-radius: 25px;
+  border: none;
+  padding-inline: 1.5rem;
+  background-color: #e2e8f0;
+  font-size: 0.9rem;
+  color: #383838;
+  font-family: inherit;
+  font-weight: 500;
+}
+#search-bar:focus-visible {
+  outline: none;
+  box-shadow: 0px 0px 9px 0px #00000014;
+}
+#profile-container {
+  justify-content: flex-end;
+  gap: 1.5rem;
+  padding-right: 1rem;
+}
+#profile-container > svg {
+  height: 50%;
+}
+#profile-container > h3 {
+  height: auto;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.vertical-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.vertical-container * {
+  height: auto;
+  padding: 0;
+  margin: 0;
+}
+#greeting {
+  font-weight: 600;
+  font-size: 0.65rem;
+}
+#name {
+  font-size: 1.2rem;
+}
+#buttons-container {
+  justify-content: flex-end;
+  gap: 1.5rem;
+}
+#buttons-container button {
+  background-color: var(--blue-color);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  height: 2.8em;
+  width: 7em;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 0.7rem;
 }
 .side-bar {
   grid-area: 1/1/-1/2;
-  background-color: #2192d4;
-  padding-left: 1rem;
+  background-color: var(--blue-color);
+  padding-left: 0.4rem;
   color: white;
   font-size: 1.2rem;
   font-weight: 500;
@@ -58,10 +144,11 @@ body {
   row-gap: 1rem;
   align-items: center;
 }
+.setting-menu {
+  grid-template-rows: repeat(3, 2rem);
+}
 #logo {
   width: 80%;
-}
-.side-bar-element {
 }
 .side-bar a {
   margin: 0;
@@ -70,9 +157,7 @@ body {
 }
 .main {
   grid-area: 2/2;
-  background-color: beige;
 }
 .side-content {
   grid-area: 2/3;
-  background-color: bisque;
 }
